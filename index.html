@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+
+        <title>danext_</title>
+
+        <meta charset = "utf-8">
+        <meta name = "description" content = "Ibukunoluwa's first hng_task  ll">
+        <meta name = "keywords" content="Web design O portfolio, coding Ibukunoluwa, Make afrobeats great again">
+        <meta name = "author" content = "Danext RT">
+
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+
+        <!-- favicon -->
+        <link rel="icon" type="image/x-icon" href="images/Joseph_Bologne.png">
+	
+    </head>
+
+    <body style ="font-family: 'Open Sans', sans-serif;">
+       
+        <main>
+            <div class="container" style="width: 50%; margin: auto; border:1px solid black">
+            <header style="display: flex; justify-content: space-between;" class="picture">
+                <h1 style="font-weight: bold; font-size: 4vw;" data-testid = "slackUserName">Ibukunoluwa</h1>
+                <img src="images/ibukun.jpg" width ="150px" height='150px' alt="Ibukunoluwa" style ="border-radius: 50%; margin-top: 60px;" data-testid = "slackDisplayImage">
+            </header>
+
+            <section class="tables"> 
+                <div style="margin-top: 40px;">
+                    <p style="color:gray" id="DateForToday">Today's date</p>
+                </div>
+
+                <div style="margin-top: 40px; ">
+                    <table  style="margin-left: auto; margin-right: auto; border: 2px solid black;  color: white;">
+                        <tr style="border: 2px solid black;background-color: black;">
+                          <th style="border: 2px solid black; width: 150px;"  >Day of the week</th>
+                          <th style="border: 2px solid black; width: 150px;"  >UTC Time</th>
+                          <th style="border: 2px solid black; width: 150px;" >Track</th>
+                          <th style="border: 2px solid black; width: 150px;" >Github url</th>
+                          
+                        </tr>
+                        <tr style="border: 2px solid black; background-color: black;">
+                          <td style="border: 2px solid black; width: 150px;" id="currentDayOfTheWeek" data-testid = "currentDayOfTheWeek"></td>
+                          <td style="border: 2px solid black; width: 150px;" id ="currentUTCTime" data-testid = "currentUTCTime"></td>
+                          <td style="border: 2px solid black; width: 150px;" data-testid = "myTrack">Frontend Track</td>
+                          <td style="border: 2px solid black; width: 150px;" data-testid = "githubURL"><a href="https://github.com/ibkagbacooker" target="_blank" style="text-decoration: none; color: white;">Ibkagbacooker</a></td>
+                        </tr>
+                </div>
+
+            </section>
+            </div>
+        </main>
+
+        <script>
+            document.addEventListener(
+                "DOMContentLoaded", ()=>{
+                    const dayofWeek = document.getElementById('currentDayOfTheWeek');
+                    const utcTime =  document.getElementById('currentUTCTime');
+                    const fullDate = document.getElementById('DateForToday')
+
+                    const currentDate = new Date();
+
+                    const daysofweek = ['Sunday', 'Monday', 'Tuseday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+                    const monthsOfTheYear = [
+                                    "January",
+                                    "February",
+                                    "March",
+                                    "April",
+                                    "May",
+                                    "June",
+                                    "July",
+                                    "August",
+                                    "September",
+                                    "October",
+                                    "November",
+                                    "December"
+                                    ];
+                    
+                    const dayOfTheWeek = daysofweek[currentDate.getUTCDay()];
+
+                    const utcTimeMilliseconds = currentDate.getTime();
+
+                    const month = currentDate.getUTCMonth();
+                    const day = currentDate.getUTCDate();
+                    const year = currentDate.getUTCFullYear();
+
+                    dayofWeek.textContent = dayOfTheWeek;
+                    utcTime.textContent = utcTimeMilliseconds;
+                    fullDate.textContent = `${monthsOfTheYear[month]}, ${day}, ${year}`
+
+
+                   
+                }
+            )
+        </script>
+        
+        
+    </body>
+
+    
+</html>

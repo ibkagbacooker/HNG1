@@ -21,7 +21,7 @@
     <body style ="font-family: 'Open Sans', sans-serif;">
        
         <main>
-            <div class="container" style="width: 50%; margin: auto; border:1px solid black">
+            <div class="container" style="width: 50%; margin: auto;">
             <header style="display: flex; justify-content: space-between;" class="picture">
                 <h1 style="font-weight: bold; font-size: 4vw;" data-testid = "slackUserName">Ibukunoluwa</h1>
                 <img src="images/ibukun.jpg" width ="150px" height='150px' alt="Ibukunoluwa" style ="border-radius: 50%; margin-top: 60px;" data-testid = "slackDisplayImage">
@@ -45,7 +45,7 @@
                           <td style="border: 2px solid black; width: 150px;" id="currentDayOfTheWeek" data-testid = "currentDayOfTheWeek"></td>
                           <td style="border: 2px solid black; width: 150px;" id ="currentUTCTime" data-testid = "currentUTCTime"></td>
                           <td style="border: 2px solid black; width: 150px;" data-testid = "myTrack">Frontend Track</td>
-                          <td style="border: 2px solid black; width: 150px;" data-testid = "githubURL"><a href="https://github.com/ibkagbacooker" target="_blank" style="text-decoration: none; color: white;">Ibkagbacooker</a></td>
+                          <td style="border: 2px solid black; width: 150px;" data-testid = "githubURL"><a href="git@github.com:ibkagbacooker/HNG1.git" target="_blank" style="text-decoration: none; color: white;">Ibkagbacooker</a></td>
                         </tr>
                 </div>
 
@@ -55,7 +55,7 @@
 
         <script>
             document.addEventListener(
-                "DOMContentLoaded", ()=>{
+                "DOMContentLoaded", function updateDateTime(){
                     const dayofWeek = document.getElementById('currentDayOfTheWeek');
                     const utcTime =  document.getElementById('currentUTCTime');
                     const fullDate = document.getElementById('DateForToday')
@@ -91,10 +91,14 @@
                     utcTime.textContent = utcTimeMilliseconds;
                     fullDate.textContent = `${monthsOfTheYear[month]}, ${day}, ${year}`
 
+                    
 
-                   
+
+                    setTimeout(updateDateTime, 1000);
                 }
+                
             )
+            updateDateTime();
         </script>
         
         
